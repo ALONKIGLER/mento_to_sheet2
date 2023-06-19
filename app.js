@@ -162,31 +162,6 @@ function writeData(auth, data) {
         }
       }
     );
-  } else {
-    const values = [["data.firstName", "data.link"]];
-    const resource = {
-      values,
-    };
-    sheets.spreadsheets.values.append(
-      {
-        spreadsheetId: "1PUBAErPVfhRe-eRjDMUJNps9x46DunQMQYs2oSMtirE",
-        range: "Sheet2",
-        valueInputOption: "RAW",
-        resource: resource,
-      },
-      (err, result) => {
-        if (err) {
-          // Handle error
-          console.log(err);
-        } else {
-          console.log(
-            "%d cells updated on range: %s",
-            result.data.updates.updatedCells,
-            result.data.updates.updatedRange
-          );
-        }
-      }
-    );
   }
 }
 
